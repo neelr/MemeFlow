@@ -1,5 +1,6 @@
 const discord = require('discord.js');
 const testChannel = "575022379756027904";
+const require = require("custom-env").env
 rip = false;
 const client = new discord.Client();
 const snekfetch = require('snekfetch');
@@ -55,4 +56,4 @@ client.on('message', (message) => {
         
 });
 
-client.login("NTc1NTQxNjE5OTI4MDcyMTkz.XNJc7Q.PIIf_DSu1pOT2afX1pTViUYJJFI");
+client.login(process.env.TOKEN);
