@@ -1,7 +1,6 @@
 const discord = require('discord.js');
-require('custom-env').env()
 const testChannel = "575022379756027904";
-rip = true;
+rip = false;
 const client = new discord.Client();
 const snekfetch = require('snekfetch');
 thingy = async (client, message, args) => {
@@ -37,20 +36,23 @@ function waiter(msg) {
     console.log("BOOP");
 }
 client.on('message', (message) => {
-    rip = false;
     if (message.content == "{}start") {
         message.channel.send("THE MEMEFLOW HAS BEGUN!!!!!!!!!!!!!!!")
         mannn = setInterval(function() {
             thingy(client,message,rip)
             if (rip) {
+		message.channel.send("STOPPPEDDDD!!!!");
+		rip = false;
                 clearInterval(mannn);
             }
         },10000);
     } else if (message.content == "{}stop") {
         rip = true;
         message.channel.send("Memeflow will soon stop....")
-    }
+    }if (message.content == "{}help") {
+			message.channel.send("**SIMPLE...** \n `{}start` for memeflow \n `{}stop` to stop it \n **KEEEP BEING A MEMEMEMEMEM!!!!!**")
+		}
         
 });
 
-client.login(process.env.TOKEN);
+client.login("NTc1NTQxNjE5OTI4MDcyMTkz.XNJc7Q.PIIf_DSu1pOT2afX1pTViUYJJFI");
